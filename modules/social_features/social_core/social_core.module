@@ -344,13 +344,6 @@ function social_core_menu_local_tasks_alter(&$data, $route_name) {
     $node = Node::load($node);
   }
 
-  // Check for all active node types.
-  if ($node instanceof Node && array_key_exists($node->getType(), NodeType::loadMultiple())) {
-    // Remove Edit tab. Edit will always go through Floating Edit Button.
-    if (isset($data['tabs'][0]['entity.node.edit_form'])) {
-      unset($data['tabs'][0]['entity.node.edit_form']);
-    }
-  }
   // Change the default 'View' tab title.
   if (isset($data['tabs'][0]['entity.node.canonical']['#link'])) {
     $data['tabs'][0]['entity.node.canonical']['#link']['title'] = t('Details');

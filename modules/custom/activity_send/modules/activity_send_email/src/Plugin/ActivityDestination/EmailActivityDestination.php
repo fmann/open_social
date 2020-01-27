@@ -49,7 +49,7 @@ class EmailActivityDestination extends SendActivityDestinationBase {
    * @return string|null
    *   If we have message text we return the text, otherwise null.
    */
-  public static function getSendEmailOutputText(Message $message, $langcode = '') {
+  public static function getSendEmailOutputText($message, $langcode = '') {
     $text = NULL;
     if (isset($message)) {
       $activity_factory = \Drupal::service('activity_creator.activity_factory');

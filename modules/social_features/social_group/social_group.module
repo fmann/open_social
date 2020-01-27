@@ -33,6 +33,7 @@ use Drupal\user\Entity\Role;
 use Drupal\user\Entity\User;
 use Drupal\profile\Entity\Profile;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -640,11 +641,19 @@ function _social_group_cancel_join_leave_form(array $form, FormStateInterface $f
  */
 function _social_group_node_form_submit(array $form, FormStateInterface $form_state) {
   $nid = $form_state->getValue('nid');
-  // Set redirect.
-  $form_state->setRedirect(
-    'entity.node.canonical',
-    ['node' => $nid]
-  );
+  $node = Node::load($nid);
+  $query_result = GroupContent::loadByEntity($node);
+  $group_node = array_pop($query_result);
+  if(isset($group_node) && !empty($group_node)) {
+    $gid = $group_node->get('gid')->getValue()[0]['target_id'];
+    $group_content_id = $group_node->get('id')->getValue()[0]['value'];
+    $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath('/group/' . $gid . '/content/' . $group_content_id);
+  }
+  else {
+    $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $nid);
+  }
+  $url = Url::fromUri('internal:' . $path_alias);
+  $form_state->setRedirectUrl($url);
 }
 
 /**

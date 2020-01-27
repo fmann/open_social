@@ -166,7 +166,9 @@ class Block extends PreprocessBase {
     // Add Group ID for "See all groups link".
     if ($variables['attributes']['id'] === 'block-views-block-group-members-block-newest-members') {
       $group = \Drupal::routeMatch()->getParameter('group');
-      $variables['group_id'] = $group->id();
+      if (method_exists($group, 'id')) {
+        $variables['group_id'] = $group->id();
+      }
     }
 
     // Add User ID for "See all link".

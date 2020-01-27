@@ -87,7 +87,7 @@ class ThemeSuggestions extends BaseThemeSuggestions {
       case 'details':
         $suggestions[] = 'details__plain';
 
-        if (in_array('image-data__crop-wrapper', $variables['element']['#attributes']['class'])) {
+        if (isset($variables['element']['#attributes']['class']) && in_array('image-data__crop-wrapper', $variables['element']['#attributes']['class'])) {
           $suggestions[] = 'details__crop';
         }
 

@@ -332,32 +332,6 @@ class AccountHeaderBlock extends BlockBase implements ContainerFactoryPluginInte
             'title_classes' => '',
             'url' => Url::fromRoute('user.page'),
           ],
-          'my_events' => [
-            'classes' => '',
-            'link_attributes' => '',
-            'link_classes' => '',
-            'icon_classes' => '',
-            'icon_label' => '',
-            'title' => $this->t('View my events'),
-            'label' => $this->t('My events'),
-            'title_classes' => '',
-            'url' => Url::fromRoute('view.events.events_overview', [
-              'user' => $account->id(),
-            ]),
-          ],
-          'my_topics' => [
-            'classes' => '',
-            'link_attributes' => '',
-            'link_classes' => '',
-            'icon_classes' => '',
-            'icon_label' => '',
-            'title' => $this->t('View my topics'),
-            'label' => $this->t('My topics'),
-            'title_classes' => '',
-            'url' => Url::fromRoute('view.topics.page_profile', [
-              'user' => $account->id(),
-            ]),
-          ],
           'my_groups' => [
             'classes' => '',
             'link_attributes' => '',

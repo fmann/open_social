@@ -133,13 +133,10 @@ function activity_send_email_form_user_form_alter(&$form, FormStateInterface $fo
     'message_to_me' => [
       'title' => t('Message to me'),
       'templates' => [
-        'create_post_profile',
-        'create_mention_post',
         'create_mention_comment',
         'create_comment_reply_mention',
         'create_comment_reply',
-        'create_comment_post_profile',
-        'create_like_node_or_post',
+        'create_like_node_or_post'
       ],
     ],
     'what_manage' => [
@@ -151,8 +148,7 @@ function activity_send_email_form_user_form_alter(&$form, FormStateInterface $fo
     'what_follow' => [
       'title' => t('What I follow'),
       'templates' => [
-        'create_comment_following_node',
-        'create_content_in_joined_group',
+        'create_comment_following_node'
       ],
     ],
   ];

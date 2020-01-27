@@ -34,10 +34,12 @@
                 "Color module html preview optional": "https://www.drupal.org/files/issues/color-optional-html-preview-2844190-2.patch",
                 "Restrict images to this site blocks image style derivatives": "https://www.drupal.org/files/issues/2018-06-14/2528214-36.patch",
                 "Fix SQL error when importing translations": "https://www.drupal.org/files/issues/2599228-31.patch",
-                "Optimize getCommentedEntity()": "https://www.drupal.org/files/issues/get-commented-entity-2580551.52.patch"
+                "Optimize getCommentedEntity()": "https://www.drupal.org/files/issues/get-commented-entity-2580551.52.patch",
+                "Force custom validation of user registration form": "patches/core_patch_user_validation.patch.txt"
             },
             "drupal/flag": {
-                "Add relationship to flagged entities when Flagging is base table": "https://www.drupal.org/files/issues/2723703_31.patch"
+                "Add relationship to flagged entities when Flagging is base table": "https://www.drupal.org/files/issues/2723703_31.patch",
+                "Flag problem with VBO module in views": "https://www.drupal.org/files/issues/2018-09-18/2893259-27.patch"
             },
             "drupal/group": {
                 "Add computed field for Group reference": "https://www.drupal.org/files/issues/add-computed-field-without-FieldItemListComputedInterface-2718195-34.patch",

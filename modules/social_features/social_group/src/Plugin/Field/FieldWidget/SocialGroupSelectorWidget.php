@@ -154,6 +154,12 @@ class SocialGroupSelectorWidget extends OptionsSelectWidget implements Container
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
     $element = parent::formElement($items, $delta, $element, $form, $form_state);
 
+    // Prepopulating group id from query string.
+    $params = \Drupal::request()->query->get('edit');
+    if (isset($params['groups'])) {
+      $element['#default_value'] = [intval($params['groups'])];
+    }
+
     $element['#suffix'] = '<div id="group-selection-result"></div>';
     $element['#ajax'] = [
       'callback' => __CLASS__ . '::validateGroupSelection',

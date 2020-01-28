@@ -178,8 +178,10 @@ class Node extends PreprocessBase {
     // for this node, we can print the count even for Anonymous.
     $enabled_types = \Drupal::config('like_and_dislike.settings')->get('enabled_types');
     $variables['likes_count'] = NULL;
-    if (in_array($variables['node']->getType(), $enabled_types['node'])) {
-      $variables['likes_count'] = _socialbase_node_get_like_count($variables['node']->getEntityTypeId(), $variables['node']->id());
+    if (is_array($enabled_types) && isset($enabled_types['node'])) {
+      if (in_array($node->getType(), $enabled_types['node'])) {
+        $variables['likes_count'] = _socialbase_node_get_like_count($variables['node']->getEntityTypeId(), $variables['node']->id());
+      }
     }
 
     // Add styles for nodes in preview.

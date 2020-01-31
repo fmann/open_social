@@ -46,7 +46,7 @@
                 "Add permission to view group overview": "https://www.drupal.org/files/issues/group-2943564-2.patch"
             },
             "drupal/image_widget_crop": {
-                "Initial crop fix": "https://www.drupal.org/files/issues/2018-07-05/2865396-36-apply-default-crop.diff"
+                "Initial crop fix": "https://www.drupal.org/files/issues/2019-09-23/image_widget_crop-apply_default_crop-2865396-44.patch"
             },
             "drupal/like_and_dislike": {
                 "Fix preview on node": "https://www.drupal.org/files/issues/2848080-2-preview-fails-on-node.patch"
